@@ -304,17 +304,14 @@ To create/register a plugin, you have to :
     #endif
 #endif
 
-
+// Make some room for Mitsubishi Heat Pump plugin.
 #if PLUGIN_BUILD_MITSUBISHI_HP_OTA
-  #undef USES_C008   // Generic HTTP
-  #undef USES_C013   // ESPEasy P2P network
-
-  #undef USES_P001   // switch
-  #undef USES_P033   // Dummy
-  #undef USES_P026   // SysInfo
+  #ifdef USES_P001
+    #undef USES_P001   // switch
+  #endif
 
   #ifndef USES_P005
-        #define USES_P005   // DHT
+    #define USES_P005   // DHT
   #endif
 
   #ifndef USES_P093

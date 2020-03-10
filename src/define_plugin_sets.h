@@ -305,6 +305,24 @@ To create/register a plugin, you have to :
 #endif
 
 
+#if PLUGIN_BUILD_MITSUBISHI_HP_OTA
+  #undef USES_C008   // Generic HTTP
+  #undef USES_C013   // ESPEasy P2P network
+
+  #undef USES_P001   // switch
+  #undef USES_P033   // Dummy
+  #undef USES_P026   // SysInfo
+
+  #ifndef USES_P005
+        #define USES_P005   // DHT
+  #endif
+
+  #ifndef USES_P093
+    #define USES_P093   // Mitsubishi Heat Pump
+  #endif
+#endif
+
+
 // Strip out parts not needed for either MINIMAL_OTA and MEMORY_ANALYSIS
 #if defined(BUILD_MINIMAL_OTA) || defined(MEMORY_ANALYSIS)
     #ifndef WEBSERVER_CUSTOM_BUILD_DEFINED

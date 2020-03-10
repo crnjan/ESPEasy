@@ -11,7 +11,7 @@
 #define PLUGIN_NAME_093       "Energy (Heat) - Mitsubishi Heat Pump [TESTING]"
 #define PLUGIN_VALUENAME1_093 "settings"
 
-#define PLUGIN_093_DEBUG
+//#define PLUGIN_093_DEBUG
 
 /*
  *

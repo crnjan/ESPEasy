@@ -319,7 +319,6 @@ To create/register a plugin, you have to :
   #endif
 #endif
 
-
 // Strip out parts not needed for either MINIMAL_OTA and MEMORY_ANALYSIS
 #if defined(BUILD_MINIMAL_OTA) || defined(MEMORY_ANALYSIS)
     #ifndef WEBSERVER_CUSTOM_BUILD_DEFINED

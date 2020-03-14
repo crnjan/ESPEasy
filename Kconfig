@@ -1,0 +1,71 @@
+mainmenu "Configure your ESPEasy"
+
+
+menu "Controllers"
+
+config C001
+    bool "Domoticz HTTP"
+
+config C002
+    bool "Domoticz MQTT"
+
+config C003
+    bool "Nodo Telnet"
+
+config C004
+    bool "ThingSpeak"
+
+config C005
+    bool "Home Assistant (openHAB) MQTT"
+
+config C006
+    bool "PiDome MQTT"
+
+config C007
+    bool "Emoncms"
+
+config C008
+    bool "Generic HTTP"
+
+config C009
+    bool "FHEM HTTP"
+
+config C010
+    bool "Generic UDP"
+
+config C011
+    bool "Generic HTTP Advanced [TESTING]"
+
+config C012
+    bool "Blynk HTTP [TESTING]"
+
+config C013
+    bool "ESPEasy P2P network"
+
+config C014
+    bool "Homie MQTT"
+
+endmenu
+
+
+menu "Plugins"
+
+config P001
+    bool "Switch"
+
+config P005
+    bool "DHT"
+
+config P026
+    bool "SysInfo"
+
+config P093
+    bool "MHP"
+
+
+endmenu
+
+menu "Web GUI Tools"
+
+
+endmenu

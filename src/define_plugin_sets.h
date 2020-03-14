@@ -26,6 +26,107 @@ To create/register a plugin, you have to :
 
 //#define FEATURE_SD
 
+#ifdef USE_CONFIG_BUILD
+
+#include "../config.h"
+
+
+#if defined(USES_C002) || defined (USES_C005) || defined(USES_C006) || defined(USES_C014) || defined(USES_P037)
+  #define USES_MQTT
+#endif
+
+#if defined(USES_C012) || defined (USES_C015)
+  #define USES_BLYNK
+#endif
+
+
+#ifdef USES_MQTT
+// MQTT_MAX_PACKET_SIZE : Maximum packet size
+#ifndef MQTT_MAX_PACKET_SIZE
+  #define MQTT_MAX_PACKET_SIZE 1024 // Is also used in PubSubClient
+#endif
+#endif //USES_MQTT
+
+
+#ifndef WEBSERVER_CUSTOM_BUILD_DEFINED
+    #ifndef WEBSERVER_TIMINGSTATS
+        //#define WEBSERVER_TIMINGSTATS
+    #endif
+    #ifndef WEBSERVER_SYSVARS
+        //#define WEBSERVER_SYSVARS
+    #endif
+    #ifndef WEBSERVER_NEW_UI
+    //    #define WEBSERVER_NEW_UI
+    #endif
+    #ifndef WEBSERVER_I2C_SCANNER
+        //#define WEBSERVER_I2C_SCANNER
+    #endif
+    #ifndef WEBSERVER_FAVICON
+        //#define WEBSERVER_FAVICON
+    #endif
+    #ifndef WEBSERVER_LOG
+        //#define WEBSERVER_LOG
+    #endif
+    #ifndef WEBSERVER_GITHUB_COPY
+        //#define WEBSERVER_GITHUB_COPY
+    #endif
+    #ifndef WEBSERVER_ROOT
+        #define WEBSERVER_ROOT
+    #endif
+    #ifndef WEBSERVER_ADVANCED
+        #define WEBSERVER_ADVANCED
+    #endif
+    #ifndef WEBSERVER_CONFIG
+        #define WEBSERVER_CONFIG
+    #endif
+    #ifndef WEBSERVER_CONTROL
+        #define WEBSERVER_CONTROL
+    #endif
+    #ifndef WEBSERVER_CONTROLLERS
+        #define WEBSERVER_CONTROLLERS
+    #endif
+    #ifndef WEBSERVER_DEVICES
+        #define WEBSERVER_DEVICES
+    #endif
+    #ifndef WEBSERVER_DOWNLOAD
+        #define WEBSERVER_DOWNLOAD
+    #endif
+    #ifndef WEBSERVER_FACTORY_RESET
+        #define WEBSERVER_FACTORY_RESET
+    #endif
+    #ifndef WEBSERVER_FILELIST
+        #define WEBSERVER_FILELIST
+    #endif
+    #ifndef WEBSERVER_HARDWARE
+        #define WEBSERVER_HARDWARE
+    #endif
+    #ifndef WEBSERVER_PINSTATES
+        //#define WEBSERVER_PINSTATES
+    #endif
+    #ifndef WEBSERVER_RULES
+        #define WEBSERVER_RULES
+    #endif
+    #ifndef WEBSERVER_SETUP
+        #define WEBSERVER_SETUP
+    #endif
+    #ifndef WEBSERVER_SYSINFO
+        #define WEBSERVER_SYSINFO
+    #endif
+    #ifndef WEBSERVER_TOOLS
+        #define WEBSERVER_TOOLS
+    #endif
+    #ifndef WEBSERVER_UPLOAD
+        #define WEBSERVER_UPLOAD
+    #endif
+    #ifndef WEBSERVER_WIFI_SCANNER
+       // #define WEBSERVER_WIFI_SCANNER
+    #endif
+#endif 
+
+
+#else // USE_CONFIG_BUILD
+
+
 /******************************************************************************\
  * WebServer pages   **********************************************************
 \******************************************************************************/
@@ -1055,3 +1156,5 @@ To create/register a plugin, you have to :
 
 
 #endif // DEFINE_PLUGIN_SETS_H
+
+#endif
